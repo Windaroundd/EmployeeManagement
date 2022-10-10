@@ -62,12 +62,13 @@
               <div class="row mb-3">
                 <div class="col">
                   <div class="input-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Loại nhân viên"
-                      id="searchName"
-                    />
+                    <select onchange="filterByRate()" class="form-control" id="searchName">
+                      <option value="">Chọn xếp loại</option>
+                      <option value="ex">Xuất sắc</option>
+                      <option value="go">Giỏi</option>
+                      <option value="ok">Khá</option>
+                      <option value="e">Trung bình</option>
+                    </select>
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="btnTimNV"
                         ><i class="fa fa-search"></i

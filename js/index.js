@@ -59,10 +59,11 @@ function editStaff(staffAccount) {
   var staff = staffList[index];
   showStaffInfoToForm(staff);
   document.getElementById("tbChucVu").style.display = "block";
-  document.getElementById("tbChucVu").innerText = `Chức vụ hiện tại: ${staff.role}`;
-  
-  document.getElementById("tknv").disabled = true;
+  document.getElementById(
+    "tbChucVu"
+  ).innerText = `Chức vụ hiện tại: ${staff.role}`;
 
+  document.getElementById("tknv").disabled = true;
 }
 
 function updateStaff() {
@@ -77,4 +78,15 @@ function updateStaff() {
   renderStaffList(staffList);
   resetForm();
   document.getElementById("tknv").disabled = false;
+}
+
+function filterByRate() {
+  var e = document.getElementById("searchName");
+  var select = e.options[e.selectedIndex].text;
+  var RatedList = staffList.filter(function (item) {
+    if (item.staffRate == select) {
+      return item.staffRate;
+    }
+  });
+  renderStaffList(RatedList);
 }
