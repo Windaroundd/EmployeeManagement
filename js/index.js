@@ -125,8 +125,8 @@ function updateStaff() {
 
   //check valid password
   isValid &=
-    checkEmpty(newStaff.password, "tbMatKhau") &&
-    checkValidPassWord(newStaff.password, "tbMatKhau");
+    checkEmpty(staffEdit.password, "tbMatKhau") &&
+    checkValidPassWord(staffEdit.password, "tbMatKhau");
 
   // check valid start date
   isValid &=
