@@ -13,21 +13,21 @@ function Staff(
   this.email = _email;
   this.password = _password;
   this.startDate = _startDate;
-  this.basicPay = _basicPay;
+  this.basicPay = Number(_basicPay);
   this.role = _role;
 
-  this.workingHours = _workingHours;
+  this.workingHours = Number(_workingHours);
 
   this.totalSalaryCalc = function () {
     switch (this.role) {
       case "Giám đốc":
-        this.totalSalary = this.basicPay * 3;
+        this.totalSalary = (this.basicPay*1)  * 3;
         break;
       case "Trưởng phòng":
-        this.totalSalary = this.basicPay * 2;
+        this.totalSalary = (this.basicPay*1) * 2;
         break;
       case "Nhân viên":
-        this.totalSalary = this.basicPay;
+        this.totalSalary = (this.basicPay*1);
         break;
     }
     return this.totalSalary;
@@ -36,11 +36,11 @@ function Staff(
   this.staffRating = function () {
     if (this.workingHours >= 192) {
       this.staffRate = "Xuất sắc";
-    } else if (this.workingHours >= 176) {
+    } else if ((this.workingHours*1) >= 176 && (this.workingHours*1) < 192) {
       this.staffRate = "Giỏi";
-    } else if (this.workingHours >= 160) {
+    } else if ((this.workingHours*1) >= 160 && (this.workingHours*1) < 176) {
       this.staffRate = "Khá";
-    } else if (this.workingHours < 160) {
+    } else if ((this.workingHours*1) < 160) {
       this.staffRate = "Trung bình";
     }
     return this.staffRate;

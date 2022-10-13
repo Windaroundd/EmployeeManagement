@@ -62,8 +62,12 @@
               <div class="row mb-3">
                 <div class="col">
                   <div class="input-group">
-                    <select onchange="filterByRate()" class="form-control" id="searchName">
-                      <option value="">Chọn xếp loại</option>
+                    <select
+                      onchange="filterByRate()"
+                      class="form-control"
+                      id="searchName"
+                    >
+                      <option value="all">Tất cả</option>
                       <option value="ex">Xuất sắc</option>
                       <option value="go">Giỏi</option>
                       <option value="ok">Khá</option>
@@ -142,6 +146,7 @@
                     id="tknv"
                     class="form-control input-sm"
                     placeholder="Tài khoản"
+                   
                   />
                 </div>
 
@@ -230,7 +235,7 @@
                     ></span>
                   </div>
                   <input
-                    type="text"
+                    type="number"
                     name="luongCB"
                     id="luongCB"
                     class="form-control input-sm"
@@ -248,9 +253,9 @@
                   </div>
                   <select class="form-control" id="chucvu">
                     <option value="">Chọn chức vụ</option>
-                    <option value="boss">Giám đốc</option>
-                    <option value="head">Trưởng phòng</option>
-                    <option value="staff">Nhân viên</option>
+                    <option value="Giám đốc">Giám đốc</option>
+                    <option value="Trưởng phòng">Trưởng phòng</option>
+                    <option value="Nhân viên">Nhân viên</option>
                   </select>
                 </div>
 
@@ -264,7 +269,7 @@
                     ></span>
                   </div>
                   <input
-                    type="text"
+                    type="number"
                     name="gioLam"
                     id="gioLam"
                     class="form-control input-sm"
@@ -286,7 +291,12 @@
             >
               Thêm người dùng
             </button>
-            <button onclick="updateStaff()" id="btnCapNhat" type="button" class="btn btn-success">
+            <button
+              onclick="updateStaff()"
+              id="btnCapNhat"
+              type="button"
+              class="btn btn-success"
+            >
               Cập nhật
             </button>
             <button

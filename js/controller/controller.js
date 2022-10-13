@@ -1,14 +1,14 @@
 function getInfoFromForm() {
-  var account = document.getElementById("tknv").value;
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-  var basicPay = document.getElementById("luongCB").value * 1;
-  var workingHours = document.getElementById("gioLam").value * 1;
-  var startDate = document.getElementById("datepicker").value;
+  var account = document.getElementById("tknv").value.trim();
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var password = document.getElementById("password").value.trim();
+  var basicPay = document.getElementById("luongCB").value.trim();
+  var workingHours = document.getElementById("gioLam").value.trim();
+  var startDate = document.getElementById("datepicker").value.trim();
   var select = document.getElementById("chucvu");
-  var roleValue = select.options[select.selectedIndex].text;
- 
+  var roleValue = select.options[select.selectedIndex].value;
+
   var staff = new Staff(
     account,
     name,
@@ -38,7 +38,9 @@ function renderStaffList(list) {
         <button onclick="removeStaff('${
           currentStaff.account
         }')" style="margin-right: 1.5px"  class="btn btn-danger">Xóa</button>
-        <button onclick="editStaff('${currentStaff.account}')" data-toggle="modal" data-target="#myModal" style="margin-left: 1.5px" class="btn btn-primary">Sửa</button>
+        <button onclick="editStaff('${
+          currentStaff.account
+        }')" data-toggle="modal" data-target="#myModal" style="margin-left: 1.5px" class="btn btn-primary">Sửa</button>
         </td>
         </tr>`;
     contentHTML += contentTr;
@@ -54,5 +56,4 @@ function showStaffInfoToForm(staff) {
   document.getElementById("luongCB").value = staff.basicPay;
   document.getElementById("gioLam").value = staff.workingHours;
   document.getElementById("datepicker").value = staff.startDate;
-  
 }
